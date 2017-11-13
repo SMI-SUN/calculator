@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf8">
+<title>Insert title here</title>
+</head>
+<h1>Calculator:-)</h1>
+<body>
+
+	<form method="post" action="/doMath">
+		<input type="number" name="firstNumber" required> <select
+			name="operator" required>
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="^">^</option>
+			<option value="√">√</option>
+
+		</select> <input type="number" name="secondNumber" required>
+
+
+		<button type="submit">Calculate</button>
+
+
+	</form>
+
+	{{#result}} {{ result }} {{/result}}
+	<!-- added the code below to keep history   -->
+	<table>
+		<thead>
+			<tr>
+				<th>History Result:</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#history}}
+			<tr>
+				<td>{{ . }}</td>
+				<!-- . or this displays each array of hist in mastach  -->
+			</tr>
+			{{/history}}
+		</tbody>
+	</table>
+	<!-- end of the code of keep history display    -->
+
+</body>
+</html>
